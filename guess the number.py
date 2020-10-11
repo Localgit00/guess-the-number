@@ -1,20 +1,20 @@
 #Игра Угадай число от 1 до 20 за 5 попыток.
 
 import random
-print('Hello, what is your name?')
+print('Привет, как тебя зовут?')
 name=input()
 secretNumber=random.randint(1,20)
-print('Well,'+name+', i thinking of a number between 1 and 20')
+print('Отлично,'+name+', я загадал число от 1 до 20')
 
 for guessTaken in range (1,6):
 	
 	try:
-		print('Take a guess. Your try is '+str(guessTaken))
+		print('Угадай! Твоя попытка номер '+str(guessTaken))
 		guess=int(input())
 		if guess<secretNumber:
-			print('Your guess is too low.')
+			print('Твой ответ меньше.')
 		elif guess>secretNumber:
-			print('Your guess is too high.')
+			print('Твой ответ больше.')
 		else:
 			break #Правильный ответ?
 	except ValueError:
@@ -22,6 +22,6 @@ for guessTaken in range (1,6):
 		print('Error')
 
 if guess==secretNumber:
-	print('Угадал! Я загадал число '+ str(secretNumber)+'. Ты угадал за '+str(guessTaken)+' шаг(а/ов)')
+	print('Yes! Я загадал число '+ str(secretNumber)+'. Ты угадал за '+str(guessTaken)+' шаг(а/ов)')
 else:
 	print('Nope. Я загадал число '+ str(secretNumber))
